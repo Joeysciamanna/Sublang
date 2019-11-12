@@ -1,0 +1,85 @@
+
+
+
+import System.print as sysout;
+import System.printError;
+import System.input as reader;
+ 
+String text = reader.read();
+String text2 = 'hi;{](})"'[5];
+
+Int number = 7;
+
+
+if (text == "Number 1"){
+   number = 1;
+};
+
+
+printBoth(number).printBoth("<- The number");
+
+
+familiy function printBoth(Var text){
+   sysout(text);
+   printError(text);
+};
+
+
+	
+printBoth(invoke(addMul));
+
+
+
+${(a, b):T} method = {return b};
+
+
+
+printBoth(invoke(method));
+
+printBoth(invoke({return a+b}));
+
+public Int function test(Int i, Float f) {
+	return f + i;
+};
+	
+#{Int i,String s} data = {1, "asdasd"};
+
+printBoth(data.s);
+
+
+
+function Int addMul(Float i, Int j){
+  return i * j + 7;
+  
+};
+
+
+
+class <T> Tester(name, date) {
+	String name;
+	String date;
+	Int number;
+};
+
+
+public class TestClass(){
+
+	@AroundInvoke(suround);
+	public Int define function doIt(Int i);
+	
+	public Int function suround(Int i, MethodContext c){
+		Int i = c.proceed(i + 1);
+		return i+1;
+	};
+
+};
+
+public annotation AroundInvoke<I^,O^>(${(I, MethodContext):O} method){
+
+};
+
+
+
+function <T> T invoke(${(Float, Int):T} method){
+   return method(1.2, 3);
+};

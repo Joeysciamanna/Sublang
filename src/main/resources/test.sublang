@@ -1,0 +1,115 @@
+import System.print as sysout;
+import System.printError;
+import System.input as reader;
+
+LEXER {operator: import, id: System, operator: ., id: input, operator: as, id: reader}
+
+
+String text = reader.read();
+
+LEXER {id: String, id: text, operator: =, id:reader, operator:., id:reader, constructor: ""}
+
+
+
+Int number = 7;
+
+LEXER {id: Int, id: number, operator: =, number: 7}
+
+
+if (text == "Number 1"){
+   number = 1;
+};
+
+LEXER {operator: if, constructor: "text == "Number 1"", body: "number = 1;"}
+constructor -> LEXER {id: text, operator:==, text: "Number 1"}
+body -> LEXER [{id: number, operator:=, number: 1}]
+
+
+printBoth(number).printBoth("<- The number");
+
+LEXER {id: printBoth, constructor: "number", operator: . id: printBoth, constructor: ""<- The number""}
+
+
+
+familiy function printBoth(Var text){
+   sysout(text);
+   printError(text);
+};
+
+LEXER {modifier: familiy, operator: function, id: printBoth, constructor:"Var text", body:"sysout(text); printError(text);"}
+constructor -> LEXER {id: Var, id: text}
+body -> LEXER [{id: text, constructor:"text"}, {id: printError, constructor:"text"}]
+	constructor1->{id:text}
+	constructor2->{id:text}
+	
+	
+printBoth(invoke(addMul));
+
+LEXER {id:printBoth, constructor:"invoke(addMul)"}
+constructor -> {id: invoke, constructor:"addMul"}
+	constructor -> {id:addMul}
+
+
+${(a, b):T} method = {return b};
+
+LEXER {operator: $, body:"(a, b):T", id: method, operator:=, body="return b"}
+body -> {constructor:"a, b", operator::, id:T}
+	constructor -> {id: a, operator: ,, id: b}
+body -> {operator: return, id: b}
+
+
+printBoth(invoke(method));
+
+printBoth(invoke({return a+b}));
+
+LEXER {id: printBoth, constructor: "invoke({return a+b})"}
+constructor -> {id: invoke, constructor:"{return a+b}"}
+	constructor -> {body: "return a+b"}
+		body->{operator: return, id: a, operator: +, id: b}
+	
+	
+	
+#{Int i,String s} data = {1, "asdasd"};
+
+LEXER {operator: "#", body: "Int i,String s", id: data, operator: =, body: "1, "asdasd""}
+body ->{ id: Int, id: i, operator: ,, id: String, id: s}
+
+printBoth(data.s);
+LEXER {id: printBoth, constructor: "data.s"}
+constructor -> {id: data, operator: ., id: s}
+
+function Int addMul(Float i, Int j){
+   return i * j + 7;
+}
+
+function <T> T invoke(${(Float,Int):T} method){
+   return method(1.2, 3);
+}
+
+
+class <T> Tester (name, date) {
+	String name;
+	String date;
+	Int number;
+};
+
+
+
+
+public class TestClass(){
+
+	@AroundInvoke(suround);
+	public Int define function doIt(Int i);
+	
+	public Int function suround(Int i, MethodContext c){
+		Int i = c.proceed(i + 1);
+		return i+1;
+	}
+
+};
+
+	
+
+public annotation AroundInvoke<I^,O^>(${(I, MethodContext):O} method){
+
+}

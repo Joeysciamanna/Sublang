@@ -3,11 +3,14 @@ package ch.g_7.sublang.test;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
+import java.util.List;
 import java.util.Scanner;
+import java.util.stream.Collectors;
 
 import ch.g_7.sublang.lang.SublangInterpreter;
 import ch.g_7.sublang.lang.SublangParser;
-import ch.g_7.sublang.parsing.parser.Parser;
+import ch.g_7.sublang.parsing.formator.Statement;
+import ch.g_7.sublang.parsing.lexer.Lexer;
 
 public class Test {
 
@@ -38,7 +41,7 @@ public class Test {
 //		List<Statement> statements = formator.format(text);
 //		statements.stream().map((s)->s.getLine()).collect(Collectors.joining("\n"));
 //		System.out.println();
-
+//
 //		System.out.println(text);
 //		System.out.println("-------------------------------------------------");
 //		Lexer lexer = new Lexer(new KeyIdentifierSet());

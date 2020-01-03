@@ -25,9 +25,10 @@ public class Parser implements IParser {
 	@Override
 	public void parse(String code, ContainerElement element) {
 		for (Statement statement : defaultFormator.format(code, this)) {
-			System.out.println("--------------------------------------------");
-			System.out.println(statement.getCode());
-			System.out.println("--------------------------------------------");
+//			System.out.println("--------------------------------------------");
+//			System.out.println(statement.getCode());
+//			System.out.println("--------------------------------------------");
+//TODO
 			statement.shiftLines(element.getLine());
 			defaultLexer.read(statement, element, this);
 		}

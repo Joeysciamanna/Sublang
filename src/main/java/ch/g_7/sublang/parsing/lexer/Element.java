@@ -1,7 +1,6 @@
 package ch.g_7.sublang.parsing.lexer;
 
 import ch.g_7.sublang.parsing.parser.IParser;
-import ch.g_7.sublang.parsing.parser.Parser;
 
 public class Element {
 

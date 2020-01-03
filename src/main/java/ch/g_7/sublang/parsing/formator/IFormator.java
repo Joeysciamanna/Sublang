@@ -3,7 +3,6 @@ package ch.g_7.sublang.parsing.formator;
 import java.util.List;
 
 import ch.g_7.sublang.parsing.parser.IParser;
-import ch.g_7.sublang.parsing.parser.Parser;
 
 public interface IFormator {
 

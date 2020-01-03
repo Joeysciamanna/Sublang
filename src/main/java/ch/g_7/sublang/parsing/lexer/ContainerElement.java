@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import ch.g_7.sublang.parsing.parser.IParser;
-import ch.g_7.sublang.parsing.parser.Parser;
 
 public class ContainerElement extends Element {
 

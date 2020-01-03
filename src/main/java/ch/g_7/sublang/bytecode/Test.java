@@ -1,16 +1,17 @@
 package ch.g_7.sublang.bytecode;
 
+import static me.qmx.jitescript.CodeBlock.newCodeBlock;
+import static me.qmx.jitescript.util.CodegenUtils.c;
+import static me.qmx.jitescript.util.CodegenUtils.ci;
+import static me.qmx.jitescript.util.CodegenUtils.p;
+import static me.qmx.jitescript.util.CodegenUtils.sig;
+
 import java.io.PrintStream;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
 import me.qmx.jitescript.CodeBlock;
 import me.qmx.jitescript.JiteClass;
-import static me.qmx.jitescript.CodeBlock.newCodeBlock;
-import static me.qmx.jitescript.util.CodegenUtils.c;
-import static me.qmx.jitescript.util.CodegenUtils.ci;
-import static me.qmx.jitescript.util.CodegenUtils.p;
-import static me.qmx.jitescript.util.CodegenUtils.sig;
 
 public class Test {
 

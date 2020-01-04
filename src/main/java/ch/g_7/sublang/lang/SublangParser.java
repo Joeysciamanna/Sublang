@@ -44,7 +44,8 @@ public class SublangParser extends Parser {
 		KEY_IDENTIFIERS.add(create("^as", "key"));
 		KEY_IDENTIFIERS.add(create("^@", "key", "annotation"));
 		
-		KEY_IDENTIFIERS.add(create("^[0-9]+", "number"));
+		KEY_IDENTIFIERS.add(create("^[0-9]*\\.[0-9]*", "float"));
+		KEY_IDENTIFIERS.add(create("^[0-9]", "integer"));
 		KEY_IDENTIFIERS.add(create("^\".*\"", "text"));
 		KEY_IDENTIFIERS.add(create("^'.*'", "text"));
 

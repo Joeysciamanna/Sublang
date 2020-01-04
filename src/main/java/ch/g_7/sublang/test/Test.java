@@ -36,7 +36,6 @@ public class Test {
 		
 		SublangInterpreter interpreter = new SublangInterpreter();
 		interpreter.interpred(parser.getRootElement());
-		
 //		Formator formator = new Formator();
 //		List<Statement> statements = formator.format(text);
 //		statements.stream().map((s)->s.getLine()).collect(Collectors.joining("\n"));
